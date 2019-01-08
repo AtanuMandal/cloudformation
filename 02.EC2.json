@@ -1,0 +1,42 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Resources": {
+        "EC2I51JXT": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "ImageId": "ami-009d6802948d06e52",
+                "InstanceType": "t3.micro",
+				"SecurityGroupIds":[{"Ref":"SecurityGroup1"}]
+            }
+			},
+			"SecurityGroup1": {
+				"Type" : "AWS::EC2::SecurityGroup",
+				"Properties" : {
+				"GroupName" : "CFGroup",
+				"GroupDescription" : "CFGroup",
+				"SecurityGroupEgress" : [ {
+					  "CidrIp" : "0.0.0.0/0",
+					  "Description" : "Allow All",
+					  "FromPort" : -1,
+					  "IpProtocol" : -1,
+					  "ToPort" : -1
+					}				
+				],
+				"SecurityGroupIngress" : [ {
+					  "CidrIp" : "0.0.0.0/0",
+					  "Description" : "Allow All",
+					  "FromPort" : -1,
+					  "IpProtocol" : -1,
+					  "ToPort" : -1
+					}
+				],
+				"VpcId" : "vpc-fe692b87"
+				}
+			}
+    },
+	            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "fd9f82fd-3520-4dc4-af0a-bcc00677351d"
+                }
+            }
+}
