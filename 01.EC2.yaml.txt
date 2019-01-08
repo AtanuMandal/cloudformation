@@ -1,0 +1,11 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  EC2I51JXT:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-009d6802948d06e52
+      InstanceType: t3.micro
+    Metadata:
+      AWS::CloudFormation::Designer:
+        id: fd9f82fd-3520-4dc4-af0a-bcc00677351d
